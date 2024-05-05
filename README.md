@@ -5,9 +5,9 @@ Sweeten the login experience for your users, your family and yourself. Sugar Can
 Sugar Candy is based on the Sugar series which was **written completely from scratch** making it clean and simple not only by looks but by design too.  
 All controls use the [latest Qt Quick Controls 2](http://doc.qt.io/qt-5/qtquickcontrols2-index.html) for [increased performance](https://blog.qt.io/blog/2015/03/31/qt-quick-controls-for-embedded/) on low end or even embedded systems and beautiful color transitions.  
 
-To learn how to control sugar levels read the section below about customization. There are **40 customizable variables** in total! This candy will be yours and only yours.  
+To learn how to control sugar levels read the section below about customization. Your secret sauce is located at ./sddm/themes/sugar-candy/theme.conf! There are **46 customizable variables** in total! This candy will be yours and only yours.  
 
-<br/><br/>
+
 ### Installation  
 
 **From within KDE Plasma**  
@@ -20,7 +20,7 @@ If for some reason you cannot find the category named "Login Screen (SDDM)" in y
 
 Download the tar archive from the files tab of this web page and extract the contents to the theme directory of SDDM *(change the path for the downloaded file if necessary)*:  
 
-<pre>$ sudo tar -xzvf ~/sugar‑candy.tar.gz -C /usr/share/sddm/themes</pre>  
+`$ sudo tar -xzvf ~/sugar‑candy.tar.gz -C /usr/share/sddm/themes`  
 
 This will extract all the files to a folder called "sugar‑candy" inside of the themes directory of SDDM.  
 
@@ -37,26 +37,29 @@ including: [`Qt Quick Controls 2`](https://doc.qt.io/archives/qt-5.11/qtquickcon
 
 **Debian based** distros using the **APT** package manager:  
 *(Ubuntu/Kubuntu/Kali/Neon/antiX etc.)*  
-<pre>sudo apt install --no-install-recommends sddm qml‑module‑qtquick‑layouts qml‑module‑qtgraphicaleffects qml‑module‑qtquick‑controls2 libqt5svg5</pre>  
+`sudo apt install --no-install-recommends sddm qml‑module‑qtquick‑layouts qml‑module‑qtgraphicaleffects qml‑module‑qtquick‑controls2 libqt5svg5`  
 
 **Arch based** distros using the **pacman** package manger:  
 *(Obarun/Artix/Manjaro/KaOS/Chakra etc.)*  
-<pre>sudo pacman -S --needed sddm qt5‑graphicaleffects qt5‑quickcontrols2 qt5‑svg</pre>  
+`sudo pacman -S --needed sddm qt5‑graphicaleffects qt5‑quickcontrols2 qt5‑svg`  
 
 **openSUSE** using the **zypper** package manager:  
-<pre>sudo zypper install sddm libqt5‑qtgraphicaleffects libqt5‑qtquickcontrols2 libQt5Svg5 libQt5Svg5</pre>  
+`sudo zypper install sddm libqt5‑qtgraphicaleffects libqt5‑qtquickcontrols2 libQt5Svg5 libQt5Svg5`  
 
 **Red Hat** based distros using the **dnf** package manager:  
 *(Fedora/Mageia/RHEL/CentOS)*  
-<pre>sudo dnf install sddm qt5‑qtgraphicaleffects qt5‑qtquickcontrols2 qt5‑qtsvg</pre>  
+`sudo dnf install sddm qt5‑qtgraphicaleffects qt5‑qtquickcontrols2 qt5‑qtsvg`  
 
-<br/><br/>
+
 ### Configuration
 
-The sugar series is **extremely customizable** by editing its included `theme.conf` file. You can change the colors and images used, the time and date formats, the appearance of the whole interface and even how it works.  
+The sugar series is **extremely customizable** by editing its included `theme.conf` file or even better by overwriting default values in `theme.conf.user`. You can change the colors and images used, the time and date formats, the appearance of the whole interface and even how it works.  
+
+The exact path to the theme.conf file differs ever so slightly from distro to distro. Most common ones are /usr/lib/sddm/themes and /usr/share/sddm/themes. Please refer to your distros manual.
+Overwrite default values in theme.conf.user instead of theme.conf to prevent changes from being overwritten when I push an update.  
 
 **Pro tip**: It's super annoying to log out and back in every time you want to see a change made to the `theme.conf` file. To preview your changes from withing your running desktop environment session simply issue:  
-<pre>sddm-greeter --test-mode --theme /usr/share/sddm/themes/sugar-candy</pre>  
+`sddm-greeter --test-mode --theme /usr/share/sddm/themes/sugar-candy`  
 
 And as if that wouldn't still be enough you can **translate every single button and label** because SDDM still [needs your help](https://github.com/sddm/sddm/wiki/Localization) to make localization as complete as possible!  
 
@@ -140,11 +143,11 @@ And as if that wouldn't still be enough you can **translate every single button 
 **`ForceHideSystemButtons="false"`**  
 *Completely disable and hide any power buttons on the greeter.*  
 
-**`AllowEmptyPassword="false"`**
-*Enable login for users without a password. This is discouraged. Makes the login button always enabled.*
+**`AllowEmptyPassword="false"`**  
+*Enable login for users without a password. This is discouraged. Makes the login button always enabled.*  
 
-**`AllowBadUsernames="false"`**
-*Do not change this! Uppercase letters are generally not allowed in usernames. This option is only for systems that differ from this standard! Also shows username as is instead of capitalized.*
+**`AllowBadUsernames="false"`**  
+*Do not change this! Uppercase letters are generally not allowed in usernames. This option is only for systems that differ from this standard! Also shows username as is instead of capitalized.*  
 
 **`Locale=""`**  
 *The time and date locale should usually be set in your system settings. Only hard set this if something is not working by default or you want a seperate locale setting in your login screen.*  
@@ -174,7 +177,7 @@ And as if that wouldn't still be enough you can **translate every single button 
 **`TranslateVirtualKeyboardButton=""`**  
 *These don't necessarily need to translate anything. You can enter whatever you want here.*  
 
-<br/><br/>
+
 ### Legal Notice
 
 This file is part of SDDM Sugar Candy.
@@ -182,24 +185,24 @@ A theme for the Simple Display Desktop Manager.
 
 Copyright (C) 2018–2020 Marian Arlt
 
-  SDDM Sugar Candy is free software: you can redistribute it and/or modify it
+SDDM Sugar Candy is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the
 Free Software Foundation, either version 3 of the License, or any later version.
 
-  You are required to preserve this and any additional legal notices, either
+You are required to preserve this and any additional legal notices, either
 contained in this file or in other files that you received along with
 SDDM Sugar Candy that refer to the author(s) in accordance with
 sections §4, §5 and specifically §7b of the GNU General Public License.
 
-  SDDM Sugar Candy is distributed in the hope that it will be useful,
+SDDM Sugar Candy is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-  You should have received a copy of the GNU General Public License
+You should have received a copy of the GNU General Public License
 along with SDDM Sugar Candy. If not, see <https://www.gnu.org/licenses/>
 
-<br/><br/>
+
 ### Other awesome projects
 
 - [Chili—the hottest login theme for KDE Plasma](https://www.opendesktop.org/p/1214121)
@@ -208,7 +211,7 @@ along with SDDM Sugar Candy. If not, see <https://www.gnu.org/licenses/>
 - [Finely crafted folder icons for Linux](https://www.opendesktop.org/p/1228310)
 - [Inline clock widget for KDE Plasma](https://www.opendesktop.org/p/1245902)
 
-<br/><br/>
+
 ### Motivate a developer
 
 In the past years I have spent quite some hours on open source projects. If you are the type of person who digs attention to detail, know how much work is involved in it and/or simply likes to support makers with a coffee or a beer I would greatly appreciate your donation on my [PayPayl](https://www.paypal.me/marianarlt) account.  

@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.6] - 2020-02-01
+## [1.6] - 2020-02-1
 ### Fixed
 - A few small fixes
 
